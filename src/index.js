@@ -82,10 +82,8 @@ async function getGoogleUser (code) {
     // Fetch the user's profile with the access token and bearer
     const params = {
       protocol: 'https:',
-      // host: 'googleapis.com',
+      // ref: https://stackoverflow.com/a/24510214
       host: 'openidconnect.googleapis.com',
-      // path: '/oauth2/v1/userinfo?alt=json&access_token=' + tokens.access_token,
-      // path: '/auth/userinfo.email?alt=json&access_token=' + tokens.access_token,
       path: '/v1/userinfo?alt=json&access_token=' + tokens.access_token,
       headers: {
         Authorization: 'Bearer ' + tokens.id_token,
