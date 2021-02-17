@@ -21,6 +21,10 @@
     "email": "talmo.christian@gmail.com"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "express": "~4.17.1",
+    "mustache": "~4.1.0",
+    "nodom": "~2.4.0",
+    "redom": "~3.27.1"
+  }
 }
-

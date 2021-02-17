@@ -16,3 +16,5 @@ package-lock.json
 # temp dev file
 miru-connect.js
 
+# google client credentials
+.google-auth.json
