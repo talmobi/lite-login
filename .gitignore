@@ -1,0 +1,18 @@
+# dependencies from `npm install`
+node_modules
+
+# vim temp files
+*.swp
+*.swo
+*.swn
+*.swm
+
+# mac files
+*.DS_Store
+
+# ignore by default, prefer properly configured package.json
+package-lock.json
+
+# temp dev file
+miru-connect.js
+

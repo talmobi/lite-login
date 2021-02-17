@@ -1,0 +1,26 @@
+{
+  "name": "lite-login",
+  "version": "0.0.0",
+  "description": "login through google",
+  "main": "lite-login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lite-login"
+  ],
+  "author": "talmobi <talmo.christian@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talmobi/lite-login"
+  },
+  "bugs": {
+    "url": "https://github.com/talmobi/lite-login/issues",
+    "email": "talmo.christian@gmail.com"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+
