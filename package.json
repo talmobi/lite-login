@@ -2,7 +2,7 @@
   "name": "lite-login",
   "version": "0.0.0",
   "description": "login through google",
-  "main": "lite-login.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +10,8 @@
     "lite-login"
   ],
   "author": "talmobi <talmo.christian@gmail.com>",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/talmobi/lite-login"
