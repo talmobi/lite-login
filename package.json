@@ -1,6 +1,6 @@
 {
   "name": "lite-login",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "login through google",
   "main": "src/index.js",
   "files": [
