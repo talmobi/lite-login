@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "login through google",
   "main": "src/index.js",
+  "files": [
+    "src/index.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

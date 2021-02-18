@@ -1,6 +1,4 @@
 // ref: https://tomanagle.medium.com/google-oauth-with-node-js-4bff90180fe6
-
-const path = require('path')
 const querystring = require('querystring')
 
 module.exports = {
