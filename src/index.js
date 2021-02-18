@@ -3,22 +3,24 @@
 const path = require('path')
 const querystring = require('querystring')
 
-const CORS_ORIGIN = 'http://localhost:8080'
-const auth = require(path.join(__dirname, '../.google-auth.json'))
-const GOOGLE_CLIENT_ID = auth.GOOGLE_CLIENT_ID
-const GOOGLE_CLIENT_SECRET = auth.GOOGLE_CLIENT_SECRET
-
 module.exports = {
-  getGoogleAuthURL,
-  getTokens,
-  getGoogleUser,
+  google: google
 }
 
-function getGoogleAuthURL () {
+function google (opts) {
+  return {
+    url: getGoogleAuthURL(opts),
+    getUser: async function getUser (code) {
+      return await getGoogleUser(code, opts)
+    }
+  }
+}
+
+function getGoogleAuthURL (opts) {
   const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
   const options = {
-    redirect_uri: CORS_ORIGIN + '/auth/google',
-    client_id: GOOGLE_CLIENT_ID,
+    redirect_uri: opts.redirect_uri || opts.redirect_url,
+    client_id: opts.client_id,
     access_type: 'offline',
     response_type: 'code',
     prompt: 'consent',
@@ -31,14 +33,14 @@ function getGoogleAuthURL () {
   return rootUrl + '?' + querystring.stringify(options)
 }
 
-async function getTokens (code) {
+async function getTokens (code, opts) {
   return new Promise(function (resolve, reject) {
     const url = 'https://oauth2.googleapis.com/token';
     const values = {
       code,
-      client_id: GOOGLE_CLIENT_ID,
-      client_secret: GOOGLE_CLIENT_SECRET,
-      redirect_uri: CORS_ORIGIN + '/auth/google',
+      client_id: opts.client_id,
+      client_secret: opts.client_secret,
+      redirect_uri: opts.redirect_uri || opts.redirect_url,
       grant_type: 'authorization_code',
     };
 
@@ -75,9 +77,9 @@ async function getTokens (code) {
   })
 }
 
-async function getGoogleUser (code) {
+async function getGoogleUser (code, opts) {
   return new Promise(async function (resolve, reject) {
-    const tokens = JSON.parse(await getTokens(code))
+    const tokens = JSON.parse(await getTokens(code, opts))
 
     // Fetch the user's profile with the access token and bearer
     const params = {
