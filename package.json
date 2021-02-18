@@ -22,8 +22,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "express": "~4.17.1",
-    "nodom": "~2.4.0",
-    "redom": "~3.27.1"
+    "express": "~4.17.1"
   }
 }
